@@ -6,7 +6,9 @@ font-family: 'Poppins', sans-serif; */
 
 :root{
     --primary-color:#2B7A78;
+    --secondary-color:#196360;
     --body-color:#F5F5F5;
+    --hover-color:#e0eeee;
     --body_alt:#FEFEFE;
     --section-heading-color:#101828;
     --section-size:24px;
@@ -136,6 +138,7 @@ p{
 }
 /****************************************************buttons*****************************************************/
 button{
+    position: relative;
     border: none;
     outline: none;
     cursor: pointer;
@@ -144,29 +147,131 @@ button{
     font-weight: 600;
 }
 .btn {
+    position: relative;
     font-size: 16px;
     border: 1px solid var(--primary-color);
     font-weight: 600;
-    padding: 12px 32px;
+    width: 116px;
+    height: 40px;
     border-radius: 8px;
+    transition: all .4s;
+}
+.btn::after{
+    content: "";
+    display: block;
+    background-color:#114443;
+    position: absolute;
+    width: 113.5px;
+    height: 38px;
+    border-radius: 4px;
+    left: .3px;
+    top: 0;
+    opacity:0;
+    transition: all .4s
+}
+
+.btn:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s;
+  }
+.btn:hover{
+    background-color:var(--hover-color);
+}
+.btn a{
+    position: relative;
+    color: var(--primary-color);
+    z-index: 1;
+}
+.btn a::after{
+    position: absolute;
+    content: attr(data-item);
+    left: 0;
+    color:var(--body-color);
+    opacity: 0;
+    transition: all .3s
+}
+.btn:active a::after{
+    position: absolute;
+    content: attr(data-item);
+    left: 0;
+    color:var(--body-color);
+    opacity: 1;
+    transition:0
 }
 .btn_aii{
+    position: relative;
     font-size: 16px;
     border: 1px solid var(--primary-color);
     font-weight: 600;
-    padding: 12px 32px;
+    width: 151px;
+    height: 48px;
     border-radius: 8px;
     align-self: center;
     justify-self: center;margin-top: 20px;
+    transition: all 1s;
 }
+.btn_aii::after{
+    content: "";
+    display: block;
+    background-color:#114443;
+    position: absolute;
+    width: 149px;
+    height: 46px;
+    border-radius: 4px;
+    left: .3px;
+    top: 0;
+    opacity:0;
+    transition: all 1s
+}
+.btn_aii:active:after{
+    content: "";
+    display: block;
+    background-color:#114443;
+    color: #e0eeee;
+    position: absolute;
+    width: 149px;
+    height: 46px;
+    border-radius: 4px;
+    left: .3px;
+    top: 0;
+    opacity:1;
+    transition: 0s
+}
+
 .btn_aii a{
+    position: relative;
     color: var(--primary-color);
+    z-index: 1;
 }
-.btn a{
-    color: var(--primary-color);
+.btn_aii a::after{
+    position: absolute;
+    content: attr(data-item);
+    left: 0;
+    color:var(--body-color);
+    opacity: 0;
+    transition: all .4s;
+
 }
+.btn_aii:active a::after{
+    position: absolute;
+    content: attr(data-item);
+    left: 0;
+    color:var(--body-color);
+    opacity: 1;
+    transition:0
+}
+
 .btn_alt{
     background-color: var(--primary-color);
+    border-radius: 8px;
+}
+.btn_alt:hover{
+    background-color: var(--secondary-color);
+}
+.btn_aii:hover{
+    background-color:var(--hover-color);
 }
 .btn_alt a{
     color:var(--body_alt);
@@ -186,6 +291,7 @@ button{
     width: 100%;
     position: fixed;
     background-color:var(--body-color);
+    z-index: 10;
 }
 .main{
     margin-top: 4rem;
@@ -216,8 +322,6 @@ button{
 
 
 /*************************************************************Nav*****************************************************/
-
-
 
 
 
@@ -286,7 +390,7 @@ button{
     color: var(--body_alt);
 }
 .info_link:hover a{
-    color:#ccc;
+    color:var(--hover-color);
 }
 .sub_list_alt{
     display: flex;
@@ -480,13 +584,10 @@ button{
         column-gap: 110px;
         row-gap: 40px;
     }
-    
     .ppg{
         margin-bottom: 5rem;
      }
- 
 }
-
 
 
 
