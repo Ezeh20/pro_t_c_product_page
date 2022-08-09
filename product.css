@@ -156,26 +156,8 @@ button{
     border-radius: 8px;
     transition: all .4s;
 }
-.btn::after{
-    content: "";
-    display: block;
-    background-color:#114443;
-    position: absolute;
-    width: 113.5px;
-    height: 38px;
-    border-radius: 4px;
-    left: 0;
-    top: 0;
-    opacity:0;
-    transition: all .4s
-}
 
-.btn:active:after {
-    padding: 0;
-    margin: 0;
-    opacity: 1;
-    transition: 0s;
-  }
+
 .btn:hover{
     background-color:var(--hover-color);
 }
@@ -184,22 +166,8 @@ button{
     color: var(--primary-color);
     z-index: 1;
 }
-.btn a::after{
-    position: absolute;
-    content: attr(data-item);
-    left: 0;
-    color:var(--body-color);
-    opacity: 0;
-    transition: all .3s
-}
-.btn:active a::after{
-    position: absolute;
-    content: attr(data-item);
-    left: 0;
-    color:var(--body-color);
-    opacity: 1;
-    transition:0
-}
+
+
 .btn_aii{
     position: relative;
     font-size: 16px;
@@ -212,33 +180,7 @@ button{
     justify-self: center;margin-top: 20px;
     transition: all 1s;
 }
-.btn_aii::after{
-    content: "";
-    display: block;
-    background-color:#114443;
-    position: absolute;
-    width: 149px;
-    height: 46px;
-    border-radius: 4px;
-    left: .3px;
-    top: 0;
-    opacity:0;
-    transition: all 1s
-}
-.btn_aii:active:after{
-    content: "";
-    display: block;
-    background-color:#114443;
-    color: #e0eeee;
-    position: absolute;
-    width: 149px;
-    height: 46px;
-    border-radius: 4px;
-    left: .3px;
-    top: 0;
-    opacity:1;
-    transition: 0s
-}
+
 
 .btn_aii a{
     position: relative;
@@ -254,14 +196,7 @@ button{
     transition: all .4s;
 
 }
-.btn_aii:active a::after{
-    position: absolute;
-    content: attr(data-item);
-    left: 0;
-    color:var(--body-color);
-    opacity: 1;
-    transition:0
-}
+
 
 .btn_alt{
     background-color: var(--primary-color);
@@ -285,33 +220,43 @@ button{
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
     border-radius: 16px;
 }
-
+.products{
+    margin-top: 3.5rem;
+}
 .header{
-    padding: 1.5rem 0;
+    padding: .5rem 0;
     width: 100%;
     position: fixed;
     background-color:var(--body-color);
     z-index: 10;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+    display: flex;
+    width: 100%;
+    height: 84px;
+    align-items: flex-end;
 }
 .main{
     margin-top: 4rem;
 }
 /*************************************************************Nav*****************************************************/
+.toggle{
+    position: relative;
+}
 .nav_toggle{
-    width: 30px;
-    height: 30px;
-    background-color: var(--primary-color);
+    cursor: pointer;
+   align-items: flex-end;
+
 }
 .nav{
-    
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
 }
 
 .lists{
     display: flex;
-    column-gap: 40px;
+    column-gap: 50px;
 }
 
 .links a{
@@ -322,7 +267,6 @@ button{
 
 
 /*************************************************************Nav*****************************************************/
-
 
 
 .footer{
@@ -418,6 +362,56 @@ button{
     display: none;
     margin-top: 60px;
 }
+.nav_list{
+    height: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+.links {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.pro a{
+    color: #2B7A78;
+    font-weight: 500;
+}
+.pro{
+    position: relative;
+    
+}
+.pro::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color:#2B7A78;
+    bottom:0px;
+    left: 0;
+}
+.back-drop{
+    width: 85%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.nav_menu{
+    width: 100%;
+   
+}
+.nav_list{
+   width: 100%;
+    display: flex;
+   justify-content: flex-end;
+    justify-items: space-between;
+}
+.lists{
+    margin-right: 15%;
+    height: 35px;
+}
+
 @media screen and (min-width:412px) {
     .bottom{
         align-items: center;
@@ -440,17 +434,20 @@ button{
     }
 }
 
-@media screen and (max-width:767px) {
-    .nav_list,
-    .auth_btn{
-        display: none;
-    }
-}
 
 @media screen and (min-width:768px) {
     .nav_toggle{
         display: none;
     }
+    .header{
+        box-shadow: none;
+    }
+    .products{
+        margin-top: 0;
+    }
+}
+
+@media screen and (min-width:768px) {
     .section_text_product{
         width: 80%;
         align-self: center;
@@ -491,7 +488,12 @@ button{
     .section{
         padding: 50px;
     }
-
+   
+}
+@media screen and (max-width:800px) {
+    .link{
+        font-size: 12px;
+    }
 }
 
 @media screen and (min-width:800px) {
@@ -522,7 +524,8 @@ button{
         border-radius: 8px;
     }
     .lists{
-        column-gap: 20px;
+        column-gap: 30px;
+        margin-right: 5%;
     }
 }
 @media screen and (min-width:969px) {
@@ -588,6 +591,93 @@ button{
         margin-bottom: 5rem;
      }
 }
-
-
+@media screen and (max-width:767px) {
+   
+    .back-drop{
+        position: fixed;
+        top: 5.3rem;
+        left: -100rem;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        transition: all .3s linear;
+    }
+    .nav_menu{
+        position: fixed;
+        background-color:#F5F5F5;
+        left: -100rem;
+        top: 5.3rem;
+        display: flex;
+        flex-direction: column;
+        min-width: 50%;
+        max-width: 40%;
+        height: 90%;
+        transition: all .3s linear;
+        border-bottom-right-radius: 30px;
+    }
+    .lists{
+        flex-direction: column;
+        row-gap: 1rem;
+        width: 100%;
+    }
+    .nav_list{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 2rem 1.5rem 3rem 1rem;
+        justify-content: space-between;
+      
+    }
+    .auth_btn{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        row-gap: 1rem;
+        justify-self: center;
+        align-items: center;
+    }
+    .btn{
+        border-radius: 8px;
+        width: 90%;
+        height: 48px;
+    }
+    .btn a{
+        font-size: 16px;
+    }
+    .pro::before{
+        content: '';
+        position: absolute;
+        width: 0;
+        height:0;
+    }
+    .links a{
+        font-size: 16px;
+    }
+    .pro a{
+        color: #FEFEFE;
+    }
+    .links{
+        padding:16px;
+    }
+    .links.pro{
+        background-color: #1D5150;
+        border-radius: 8px;
+    }
+    .lists{
+        width: 100%;
+        margin-right: 0;
+        height:initial;
+    }
+   
+}
+.show_nav{
+    left: 0;
+    transition: all .3s linear;
+}
+.visible_blackdrop{
+    left: 0;
+    transition: all .3s linear;
+}
 
